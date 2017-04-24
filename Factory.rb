@@ -1,5 +1,5 @@
 class Factory
-include Enumerable
+	include Enumerable
 
 	def self.new(*args. &block)
 		 args.first.class == String &&
@@ -7,21 +7,21 @@ include Enumerable
 
     
 
-    new_class = Class.new do
+    	new_class = Class.new do
 
-    	args.each { |value| attr_accessor value.to_sym }
+    		args.each { |value| attr_accessor value.to_sym }
 
-    	define_method :initialize do
+    		define_method :initialize do
+
+    		end
+
+    		define_method [] 
+
+    		end
+
+
 
     	end
-
-    	define_method [] 
-
-    	end
-
-
-
-    end
 
 	end
 
