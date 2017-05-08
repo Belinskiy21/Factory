@@ -19,10 +19,9 @@ class Factory
       define_method(:arguments) do
         args
       end
-
-      define_method(:greeting) do
-        "Hello #{name}!"
-      end
+      
+      class_eval &block if block_given?
+      
 
     end
   end

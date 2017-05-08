@@ -9,6 +9,10 @@ p joe['name']
 p joe[:name]
 p joe[0]
 
-Customer2 = Factory.new(:name, :address)
+Customer2 = Factory.new(:name, :address) do 
+	def greeting
+	 "Hello #{name}!"
+	end
+end
 
 p Customer2.new('Dave', '123 Main').greeting
