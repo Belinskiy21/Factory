@@ -1,10 +1,8 @@
 class Factory
   def self.new(*args, &block)
 
-     args.first.class == String and args.first[0] == args.first[0].capitalize ? name = args.shift : args.shift
+    Class.new do
 
-    new_class = Class.new do
-      
       attr_accessor  *args
 
 
@@ -30,6 +28,5 @@ class Factory
       
 
     end
-     name ? const_set(name, new_class) : new_class
   end
 end
