@@ -7,7 +7,7 @@ class Factory
 
 
       define_method :initialize do |*attr|
-        args.each_with_index do |value, index|
+        args.each.with_index(0) do |value, index|
           self.instance_variable_set("@#{value}", attr[index])
         end
       end
@@ -23,9 +23,9 @@ class Factory
       define_method(:arguments) do
         args
       end
-      
+
       class_eval &block if block_given?
-      
+
 
     end
   end
