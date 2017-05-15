@@ -1,7 +1,7 @@
 class Factory
   def self.new(*args, &block)
 
-    Class.new do
+     Class.new do
 
       attr_accessor  *args
 
@@ -16,12 +16,8 @@ class Factory
         if value.is_a?(String) || value.is_a?(Symbol)
           instance_variable_get("@#{value}")
         elsif value.is_a?(Integer)
-          instance_variable_get("@#{arguments[value]}")
+          instance_variable_get(instance_variables[value])
         end
-      end
-
-      define_method(:arguments) do
-        args
       end
 
       class_eval &block if block_given?
